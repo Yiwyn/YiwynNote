@@ -50,6 +50,8 @@
 
   - ##### 引导类规范: Application结尾,作为SpringBoot程序的入口
 
+  - #### <font color='red'>springbootApplication引导类要置语逻辑代码的上层,不然不起作用</font>
+
 - #### 启动测试
 
   - ###### springBoot自带了Tomcat组件
