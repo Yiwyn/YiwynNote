@@ -86,6 +86,20 @@
         }
     }
     ```
+    
+  - ##### 添加配置文件
+
+  - ```java
+    @Configuration
+    @EnableConfigurationProperties(RedisProperties.class)
+    public class RedisAutoConfiguration {
+    ....
+        @Bean
+        public Jedis jedis(RedisProperties redisProperties) {
+            return new Jedis(redisProperties.getHost(), redisProperties.getPort());
+        }
+    }
+    ```
 
 - #### 创建spring.factories文件
 
@@ -116,4 +130,26 @@
     Jedis jedis = context.getBean(Jedis.class);
     System.out.println(jedis);
     ```
+  
+- #### 完善自动配置条件
+
+  - ##### Jedis 包在的时候自动加载  <font color='orange'>@ConditionalOnClass(Jedis.class)</font>
+
+  - ##### 如果已经存在jedis的bean对象,则不创建  <font color='orange'>@ConditionalOnMissingBean(name = "jedis")</font>
+
+  - ```java
+    @Configuration
+    @EnableConfigurationProperties(RedisProperties.class)
+    @ConditionalOnClass(Jedis.class) //自动创建条件
+    public class RedisAutoConfiguration {
+    	....
+        @Bean
+        @ConditionalOnMissingBean(name = "jedis")  //已经存在则不创建
+        public Jedis jedis(RedisProperties redisProperties) {
+            return new Jedis(redisProperties.getHost(), redisProperties.getPort());
+        }
+    }
+    ```
+
+    
 
