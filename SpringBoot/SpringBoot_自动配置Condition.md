@@ -81,4 +81,6 @@ public class MyApplication {
     ```
 
   - ###### 这个时候因为<font color='red'>matches</font>方法中返回值为false,因此不会自动创建bean对象,这个时候springbootApplication中context将获取不到bean对象.于是我们可以对ClassCondition类中的matches方法进行操作.
+  
+- ##### 将ClassCondition配置为自动的
 
