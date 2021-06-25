@@ -12,8 +12,16 @@
         <version>2.5.0</version>
     </parent>
     
+    
+    
     <dependencies>
         <!--        导入依赖-->
+          <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+            </dependency>
+        
+         <!--        Web项目需要的依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
