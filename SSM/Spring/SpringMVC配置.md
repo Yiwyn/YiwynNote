@@ -40,7 +40,7 @@
     
     #####  其中 init-param 参数下参数名,代表了上下文配置路径.
     
-    #### <font color='orange'>需要特别注意的是,文件中出现了连个springxxx.xml,系统默认处理一个,这个时候需要加载全局spring监听器,并且创建全局初始化参数,否则系统加载到spring配置文件之后不会加载剩下的配志文件</font>
+    #### <font color='orange'>需要特别注意的是,文件中出现了多个springxxx.xml,系统默认处理一个,这个时候需要加载全局spring监听器,并且创建全局初始化参数,否则系统加载到spring配置文件之后不会加载剩下的配志文件</font>
     
     ###### 		spring-mvc.xml 作为配置文件主要为了扫描mvc相关的注解
 

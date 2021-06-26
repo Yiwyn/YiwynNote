@@ -8,6 +8,8 @@
 
 - ##### 导入配置类
 
+  - ###### 导入配置类时,该配置类下的@Bean注解对象,不需要再单独使用@import导入,getbean()获取即可
+
 - ##### 导入ImportSelector实现类.一般用于加载配置文件中的类
 
 - ##### 导入importBeanDefinitionRegistrat

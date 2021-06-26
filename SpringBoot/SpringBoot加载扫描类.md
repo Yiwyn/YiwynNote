@@ -16,6 +16,16 @@
 
 - ##### 使用<font color='orange'>@import</font> 注解
 
+  - ```java
+    @SpringBootApplication
+    @import({xxx.class,xxx.class})
+    public class MyApplication {
+    
+    }
+    ```
+
+    
+
 - ##### 自己包装<font color='orange'>@import</font>注解
 
   - ```java

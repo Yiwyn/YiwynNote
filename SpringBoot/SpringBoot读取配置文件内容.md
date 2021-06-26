@@ -61,6 +61,28 @@
 
   - ###### 如果注解不添加前缀,则注入参数时系统会默认注入配置中属性和bean中存在属性一致的参数,只有参数标识了前缀,系统才会自动识别注入父标签匹配bean中的属性.
 
+- #### 使用<font color='orange'>@EnableConfigurationProperties</font> 来激活配置属性
+
+  - ```java
+    @Import({UserConifg.class})
+    @SpringBootApplication
+    @EnableConfigurationProperties(User.class)
+    public class SpringbootConfigurationApplication {
+    
+        public static void main(String[] args) {
+    
+            ConfigurableApplicationContext run = SpringApplication.run(SpringbootConfigurationApplication.class, args);
+            User user = (User) run.getBean("user01");
+            System.out.println(user.getName());
+            System.out.println(user.getGender());
+        }
+    }
+    ```
+
+  
+
+  
+
   - #### <font color='red'>注意</font>
 
     - #### 使用<font color='orange'>@ConfigurationProperties</font>时可以导入依赖
@@ -73,6 +95,6 @@
         </dependency>
         ```
 
-    - #### 这样我们自己的bean类在书写配置文件的时候也会出现提示,如果没有出现提示,可以在启动项目处选择build project(ctrl+F902)
+    - #### 这样我们自己的bean类在书写配置文件的时候也会出现提示,如果没有出现提示,可以在启动项目处选择build project(ctrl+F9 02)
 
     
