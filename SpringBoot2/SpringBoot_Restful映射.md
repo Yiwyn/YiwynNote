@@ -75,6 +75,25 @@
           filter:
             enabled: true
     ```
+    
+  - ##### 修改默认的<font color='fuchsia'>_method</font> 
+
+    - ##### 自己创建config类,修改<font color='cornflowerblue'>HiddenHttpMethodFilter</font>的bean对象
+
+    - ```java
+      @Configuration(proxyBeanMethods = false)
+      public class WebConfig {
+      
+          @Bean
+          public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
+              HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter();
+              hiddenHttpMethodFilter.setMethodParam("_m");
+              return hiddenHttpMethodFilter;
+          }
+      }
+      ```
+
+    - ##### 这样 form表单中<font color='red'>name</font>的值就是<font color='red'>_m</font>了
 
 - ##### 选择开启.前后端分离
 
