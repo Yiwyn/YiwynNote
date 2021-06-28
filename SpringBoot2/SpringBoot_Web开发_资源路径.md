@@ -11,13 +11,15 @@
 
 - ### 在默认情况下,springboot服务的静态资源来自文件夹<font color='red'>Resources</font>下
 
-  - #### /static
+  - #### /static  <font color='fuchsia'>(一般静态资源默认放在这个位置)</font>
 
   - #### /public
 
   - #### /resources
 
   - ####  /META-INF/resources
+
+  - #### 顺序：相同文件名被访问的优先级，<font color='red'>META-INF>resources>static>public</font>
 
 - ### 在默认情况下,资源的访问路径映射前缀<font color='fuchsia'>/**</font> ,可以使用<font color='cornflowerblue'>application</font>文件修改
 
