@@ -124,15 +124,43 @@
 
 
 
+- ## 分页查询
 
+  - #### 分页查询需要配置<font color='cornflowerblue'>bean</font>对象，所以在springboot中我们需要创建<font color='orange'>Configuration</font>类
 
+    - ```java
+      @Configuration
+      public class MyDataSourceConfig {
+      
+      	//自定义的分页查询的bean
+          @Bean
+          public PaginationInterceptor paginationInterceptor() {
+              PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+      
+              paginationInterceptor.setCountSqlParser(new JsqlParserCountOptimize());
+      
+              return paginationInterceptor;
+          }
+      }
+      ```
 
+  - ### 在UserService配置完成之后，<font color='fuchsia'>userService</font>象包含<font color='cornflowerblue'>page</font>方法 
 
+    - ##### 配置如下
 
+    - ```java
+      Page<User> userPage = new Page<>(1, 2);
+      userService.page(userPage, null);
+      ```
 
+    - ##### 这样获取到的对象userPage对象，包含了当前记录，当前页数，总页数，全部记录数等信息。
 
+    - ```java
+      System.out.println(userPage.hasPrevious()); //是或有上一页
+      System.out.println(userPage.getPages()); //获取全部页数
+      System.out.println(userPage.getTotal()); // 获取全部数数据数
+      System.out.println(userPage.getRecords());//查询到的数据列表
+      ```
 
-
-
-## 
+      
 
