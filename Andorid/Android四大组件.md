@@ -6,7 +6,7 @@
 
 - #### Service  服务
 
-- #### Broadcast Receive 广播接收者
+- #### Broadcast Receiver 广播接收者
 
   - ##### 广播接收者有两种注册方法,<font color='red'>动态注册</font>和<font color='red'>静态注册</font> ,其中静态注册需要在<font color='cornflowerblue'>AndroidManifest.xml</font>中注册
 
