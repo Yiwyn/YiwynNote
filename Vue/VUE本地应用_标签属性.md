@@ -102,6 +102,60 @@ change: function() {
 
 
 
+##### <font color='red'>v-on</font>绑定的方法,默认传参数event,包含点击<font color='cornflowerblue'>按钮等的信息</font> ,如果需要自己传入参数,只需要 <font color='cornflowerblue'>v-on:click="func(paramete,$event)"</font> 这个时候第一(多)个值为我们传入的参数,而<font color='cornflowerblue'>$event</font>是固定语句,作为占位符提供给方法使用.在<font color='fuchsia'>methods</font> 中定义时,写入对应参数即可
+
+
+
+
+
+<hr>
+
+
+
+##### 
+
+### <font color='red'>数据绑定</font>
+
+- #### 数据绑定的核心是<font color='red'>view</font>和<font color='red'>model</font> ,重心在数据的传输上.
+
+- #### <font color='red'>v-bind</font>单向数据绑定
+
+  - ###### 使用该标签可以使<font color='fuchsia'>model</font>层的数据流向<font color='fuchsia'>view</font>层,但是view层的数据不会流向model层,所以<font color='fuchsia'>单向</font>
+
+- #### <font color='red'>v-model</font>双向数据绑定(该标签只能在<font color='cornflowerblue'>表单类(输入类)</font>标签中使用)
+
+  - ###### 使用该标签可以使<font color='fuchsia'>model</font>层和<font color='fuchsia'>view</font>层的数据相互流通
+
+  - ###### v-model绑定的是输入标签的属性 例如:value
+
+  
+
+  ```html
+  <div id="app">
+  			单向数据绑定: <input type="text" v-bind:value="data1" /> <br>
+  			双向数据绑定: <input type="text" v-model:value="data1" /> <br>
+  			//这个时候第一个input的值会随着第二个input的值改变,而第一个改变第二个不会改变
+      		//第二个修改了model中的值,所以引起了第一个值的修改.
+  		</div>
+  
+  		<script type="text/javascript">
+  			new Vue({
+  				el: "#app",
+  				data: {
+  					data1: "数据",
+  				}
+  			})
+  		</script>
+  ```
+
+  
+
+  
+
+
+
+
+
 ​	
 
 
