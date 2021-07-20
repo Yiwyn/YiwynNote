@@ -14,6 +14,44 @@
 
 ##### <font color='red'>配置文件解析</font>
 
+```
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+  
+    keepalive_timeout  65;
+
+    upstream test{								//代理的url
+        server 127.0.0.1:8081 weight=1;
+        server 127.0.0.1:8082 weight=1;
+    }
+
+
+    server {
+        listen       80;						//拦截的端口
+        server_name  localhost;					//服务名字
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+             proxy_pass http://test;  			//自定义的代理pass
+        }
+        
+        //可以有多个server
+
+    }
+```
+
+
+
+
+
+
+
+<hr>
+
 
 
 - ##### <font color='cornflowerblue'>http</font> 标签 
