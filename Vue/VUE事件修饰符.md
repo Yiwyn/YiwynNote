@@ -28,3 +28,13 @@
 
 #### <font color='red'>其他操作同理</font>
 
+
+
+##### 修饰符是可以连续写的使用<font color='red'>.</font>分隔
+
+```html
+<a href="http://www.yiwyn.top"  @click.prevent.stop="">点击我去个人网站</a>
+```
+
+
+
