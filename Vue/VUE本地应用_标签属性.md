@@ -122,6 +122,8 @@ change: function() {
 
   - ###### 使用该标签可以使<font color='fuchsia'>model</font>层的数据流向<font color='fuchsia'>view</font>层,但是view层的数据不会流向model层,所以<font color='fuchsia'>单向</font>
 
+  - ###### v-bind:attr 可以缩写为:attr
+
 - #### <font color='red'>v-model</font>双向数据绑定(该标签只能在<font color='cornflowerblue'>表单类(输入类)</font>标签中使用)
 
   - ###### 使用该标签可以使<font color='fuchsia'>model</font>层和<font color='fuchsia'>view</font>层的数据相互流通
