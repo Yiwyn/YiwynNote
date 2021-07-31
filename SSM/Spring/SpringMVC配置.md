@@ -42,6 +42,20 @@
     
     #### <font color='orange'>需要特别注意的是,文件中出现了多个springxxx.xml,系统默认处理一个,这个时候需要加载全局spring监听器,并且创建全局初始化参数,否则系统加载到spring配置文件之后不会加载剩下的配志文件</font>
     
+    <hr>
+    
+    #### <font color='red'>文件目录的差异</font>
+    
+    ##### classpath: 当前项目根目录
+    
+    ##### classpath*:导入的项目(jar包等)的根目录一同扫描
+    
+    
+    
+    <hr>
+    
+    
+    
     ###### 		spring-mvc.xml 作为配置文件主要为了扫描mvc相关的注解
 
 - ##### 创建Controller类和视图页面
@@ -56,8 +70,6 @@
             System.out.println("Controller save running...");
             return "success.jsp";
         }
-    
-    
     }
     ```
     
@@ -68,7 +80,7 @@
     - ##### <font color='red'>注</font>
     
       - ###### 可以看到类和方法上面都添加了<font color='orange'>RequestMapping</font>注解,这里可以翻译为访问路径 <font color='cornflowerblue'>/user/quick</font>
-
+  
 - ##### 配置springMVC的核心文件spring-mvc.xml
 
   - ###### 见上<font color='red'>注</font>
