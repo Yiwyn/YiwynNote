@@ -1,4 +1,4 @@
-## <font color='red'>快速开始</font>
+# <font color='red'>快速开始</font>
 
 
 
@@ -73,6 +73,12 @@
 
   - ##### 其中,第2步配置注册中心,在windows或者linux中启动zookeeper后,<font color='red'>linux</font>要开放<font color='red'>2181端口</font>,否则连接失败
 
+
+
+- #### 配置完成需要进行<font color='red'>install</font>  (<font color='cornflowerblue'>mvn install</font>)
+
+<hr>
+
 - ### <font color='red'>这里的本质是将service作为一个dubbo中的服务者,下一步让web作为消费者</font>
 
 
@@ -107,7 +113,29 @@
 
       - ###### 将结果封装为一个代理对象.给变量赋值
 
-  - ##### 项目启动,系统将自动调用dubbo来协同工作
+  - ##### 项目启动,系统将自动调用dubbo来协同工作.
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+### <font color='red'>解决不同项目直接接口的问题</font>
+
+- ##### 因为需要的方法来自其他的项目,当我们在当前项目使用其他项目提供的方法时,编译器会不通过,所以需要我们使用一定的方法来规避开这个问题.
+
+- ##### 解决方案
+
+  - ##### 创建一个新的项目(modul),把接口创建在这个项目中.
+
+  - ##### 连接到Dubbo中的项目导入新创建的项目包.通过分离接口单独封装为一个项目,更加灵活的控制接口在dubbo中的每一个项目直接引用.
 
 
 
