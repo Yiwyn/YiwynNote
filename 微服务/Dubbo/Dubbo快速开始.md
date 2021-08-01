@@ -29,13 +29,13 @@
                 <artifactId>dubbo</artifactId>
                 <version>2.7.4.1</version>
             </dependency>
-    
+      
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
                 <version>4.0.0</version>
             </dependency>
-    
+      
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-recipes</artifactId>
@@ -79,7 +79,7 @@
 
 <hr>
 
-- ### <font color='red'>这里的本质是将service作为一个dubbo中的服务者,下一步让web作为消费者</font>
+- ### <font color='red'>这里的本质是将service作为一个dubbo中的提供者,下一步让web作为消费者</font>
 
 
 
@@ -87,7 +87,7 @@
 
 
 
-- ### 配置dubbo ---web  <font color='cornflowerblue'>(用web来模拟一个消费者使用服务者提供的服务)</font>
+- #### 配置dubbo ---web  <font color='cornflowerblue'>(用web来模拟一个消费者使用提供者提供的服务)</font>
 
   - ##### 去除<font color='cornflowerblue'>pom</font>文件中对本地文件的引用
 
