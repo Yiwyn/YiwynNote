@@ -12,7 +12,7 @@
 
 ```javascript
 watch: {
-	isHot: {
+	isHot: {  //监视isHot
 		handler(newValue, oldValue) {
 				console.log(newValue, oldValue);
 				}
