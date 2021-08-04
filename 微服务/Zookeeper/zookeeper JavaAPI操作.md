@@ -24,7 +24,6 @@
 
   <hr>
 
-  
 
 ## <font color='red'>Curator API 常用操作</font>
 
@@ -137,4 +136,99 @@
     
 
 
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+### <font color='red'>代码参考</font>
+
+```java
+package com.yiwyn;
+
+
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.api.CreateBuilder;
+import org.apache.curator.retry.RetryForever;
+import org.apache.zookeeper.CreateMode;
+import org.apache.zookeeper.data.Stat;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.nio.charset.StandardCharsets;
+import java.util.List;
+
+public class curatorTest {
+
+    CuratorFramework client;
+    private Stat stat;
+
+    @Before			//执行test方法之前执行
+    public void testConnect() {
+
+        client = CuratorFrameworkFactory.builder().connectString("192.168.3.115:2181").
+                sessionTimeoutMs(15 * 1000).
+                connectionTimeoutMs(15 * 1000).
+                retryPolicy(new RetryForever(1000))
+                .namespace("yiwyn").build();
+        client.start();
+
+    }
+    
+
+    @Test
+    public void testCreate() throws Exception {
+
+//        client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath("/app2", "Hello".getBytes(StandardCharsets.UTF_8));
+        client.create().forPath("/app1");
+    }
+
+
+    @Test
+    public void testDelete() throws Exception {
+
+//        client.delete().deletingChildrenIfNeeded().forPath("/app1");
+        client.delete().guaranteed().forPath("/app1");  //必然成功的删除
+
+    }
+
+    @Test
+    public void testQuery() throws Exception {
+        stat = new Stat();
+        byte[] bytes = client.getData().storingStatIn(stat).forPath("/app1");
+        System.out.println(new String(bytes));
+        System.out.println(stat.getDataLength());
+    }
+
+
+    @Test
+    public void tesSet() throws Exception {
+        stat = new Stat();
+        byte[] bytes = client.getData().storingStatIn(stat).forPath("/app1");
+        int version = stat.getVersion();
+        client.setData().withVersion(version).forPath("/app1", "yiwyn".getBytes(StandardCharsets.UTF_8));
+    }
+
+
+    @After			//执行test方法之后执行
+    public void close() {
+        if (client != null) {
+            client.close();
+        }
+    }
+
+
+}
+
+```
 
