@@ -107,8 +107,7 @@
 
 
 
-
-- # <font color='red'>表单数据收集</font>
+# <font color='red'>表单数据收集</font>
 
 
 
@@ -134,20 +133,20 @@
     
 - ```html
     		<div id="app">
-    			<form @submit="show()">
-    				<label for="username">账号：</label>
-    				<input type="text" name="username" v-model:value="personInfo.username" /> <br>
-    				<label for="password">密码：</label>
-    				<input type="password" name="password" v-model="personInfo.password" />
-    				<br>
-    				男：<input type="radio" value="男" v-model="personInfo.gender" /> <br>
-    				女：<input type="radio" value="女" v-model="personInfo.gender" />
-    				确认：<input type="checkbox" name="输入" v-model="personInfo.isOk"/>
-    				<br> <input type="submit" value="提交" />
-    			</form>
-    		</div>
-    
-    
+        			<form @submit="show()">
+        				<label for="username">账号：</label>
+        				<input type="text" name="username" v-model:value="personInfo.username" /> <br>
+        				<label for="password">密码：</label>
+        				<input type="password" name="password" v-model="personInfo.password" />
+        				<br>
+        				男：<input type="radio" value="男" v-model="personInfo.gender" /> <br>
+        				女：<input type="radio" value="女" v-model="personInfo.gender" />
+        				确认：<input type="checkbox" name="输入" v-model="personInfo.isOk"/>
+        				<br> <input type="submit" value="提交" />
+        			</form>
+        		</div>
+
+
     		<script>
     			new Vue({
     				el: "#app",
@@ -171,4 +170,63 @@
 
 
 - ##### <font color='cornflowerblue'>javaScripts</font>中<font color='red'>JSON.stringify(param)</font>可以对象转换为json数据并返回。
+
+
+
+
+
+<hr>
+
+
+
+# <font color='red'>v-cloak</font>
+
+
+
+- #### 该指令没有值，Vue创建实例完毕并接管容器后，会删掉<font color='red'>v-cloak</font>属性
+
+- #### 使用css属性配合v-cloak可以解决网速慢引起的页面显示<font color='red'>{{xxx}}</font>的问题
+
+- #### css
+
+  - ```css
+    		<style>
+      			[v-cloak]{
+      				display: none;
+      			}
+      		</style>
+    ```
+
+- #### html
+
+  - ```html
+    		<div id="app">
+      			<span v-cloak> {{message}}</span>
+      		</div>
+    ```
+
+
+
+
+
+<hr>
+
+
+
+
+# <font color='red'>v-once</font>
+
+
+
+- #### 该指令没有参数
+
+- #### 添加了该指令的数据，会保持初始化的值。不会随着数据的改变而变化
+
+- ```html
+  	<div id="app">
+  		<span v-once> {{message}}</span>
+  	</div>
+  ```
+
+- #### 这样，message的数据无论发生什么变化，渲染显示的内容一直会是初始化，不会变化
 
