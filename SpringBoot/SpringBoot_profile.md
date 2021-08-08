@@ -14,7 +14,7 @@
 
     - #### <font color='red'>例</font>
 
-      - ![image-20210615121606774](C:\Users\55971\AppData\Roaming\Typora\typora-user-images\image-20210615121606774.png)
+      - ![image-20210615121606774](F:\学习笔记\YiwynNote\SpringBoot\images\image-20210615121606774.png)
 
       - ```properties
         spring.profiles.active=dev
