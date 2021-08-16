@@ -283,5 +283,7 @@
 
   - ##### <font color='red'>$refs</font>中会包含所有的含有<font color='red'>ref</font>属性的元素
 
+- #### 可以使用<font color='cornflowerblue'>ref</font>获取组件实例对象
+
 
 
