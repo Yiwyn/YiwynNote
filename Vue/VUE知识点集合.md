@@ -1,5 +1,7 @@
 # <font color='red'>按钮添加对象属性</font>
 
+
+
 - #### html
 
   - ```html
@@ -239,8 +241,9 @@
 
 
 
-
 # <font color='red'>v-pre</font>
+
+
 
 - #### 该指令可以跳过其所在节点的编译过程
 
@@ -248,8 +251,8 @@
 
 - ```html
   		<div id="app">
-  			<span v-pre> {{message}}</span>
-  		</div>
+    			<span v-pre> {{message}}</span>
+    		</div>
   ```
 
 
@@ -257,6 +260,28 @@
 
 
 
+
+
+
+# <font color='red'>ref</font>
+
+
+
+- #### 在传统的js里面我们查找元素使用的是<font color='red'>document</font>对象下的方法，在vue中使用这种代码不方便，我们通常使用<font color='orange'>ref</font>代替id
+
+- #### code
+
+  - ```html
+     <h1 ref="msg" v-text="msg"></h1>
+    ```
+
+  - ##### 在vue中获取
+
+  - ```js
+    this.$refs.msg
+    ```
+
+  - ##### <font color='red'>$refs</font>中会包含所有的含有<font color='red'>ref</font>属性的元素
 
 
 
