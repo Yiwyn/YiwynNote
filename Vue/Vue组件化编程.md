@@ -310,38 +310,62 @@
 
     - ```js
       			const school = Vue.extend({
-      				template: `
-      				<div>
-      				学校名称：{{name}} <br>
-      				学校地址：{{address}} <br>
-      				</div>
-      				`,
-      				data() {
-      					return {
-      						name: "xuexiao",
-      						address: "diqiu"
-      					}
-      				}
-      			})
-      			const student = Vue.extend({
-      				name:`stu`,
-      				template: `
-      				<div>
-      				姓名：{{name}} <br>
-      				学号：{{num}} <br>
-      				<school></school>					//这里使用嵌套
-      				</div>
-      				`,
-      				data() {
-      					return {
-      						name: "yiwyn",
-      						num: "0001"
-      					}
-      				},
-      				comments:{
-      					school
-      				}
-      			})
+        				template: `
+        				<div>
+        				学校名称：{{name}} <br>
+        				学校地址：{{address}} <br>
+        				</div>
+        				`,
+        				data() {
+        					return {
+        						name: "xuexiao",
+        						address: "diqiu"
+        					}
+        				}
+        			})
+        			const student = Vue.extend({
+        				name:`stu`,
+        				template: `
+        				<div>
+        				姓名：{{name}} <br>
+        				学号：{{num}} <br>
+        				<school></school>					//这里使用嵌套
+        				</div>
+        				`,
+        				data() {
+        					return {
+        						name: "yiwyn",
+        						num: "0001"
+        					}
+        				},
+        				comments:{
+        					school
+        				}
+        			})
+      ```
+
+
+
+
+
+
+
+
+
+
+
+
+- ### scoped
+
+  - ##### 脚手架会将每个组件文件中的style集合起来，出现相同的标识的元素标记后出现的覆盖之前的。
+
+  - ##### 使用scoped命令可以使style范围化，只在当前组件可用，当脚手架集合在一起的时候会出现一个随机id进行匹配，解除多个相同名称冲突的问题
+
+    - ```vue
+      <style scoped>
+      
+      </style>>
       ```
 
       
+
