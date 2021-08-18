@@ -50,4 +50,8 @@
     - ##### 使用<font color='red'>$emit</font>方法调用指令并且传入参数。
 
     - ##### <font color='red'>v-on:xxx</font>可以缩写为 <font color='red'>@xxx</font> 
+  
+- ##### 方法三
+
+  - ##### ref
 
