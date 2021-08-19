@@ -79,10 +79,6 @@
 
 
 
-
-
-
-
 ## <font color='red'>总结</font>
 
 
@@ -91,7 +87,9 @@
 
 - #### 父组件中的方法定义都是一样的
 
-- #### 子组件处的调用方式主要取决于父组件的传递方式
+- #### 子组件<font color='red'>
+
+- #### 处的调用方式主要取决于父组件的传递方式
 
   - ##### 使用prop传递 
 
@@ -103,16 +101,7 @@
 
 
 
-
-
-
-
 <hr>
-
-
-
-
-
 
 
 
@@ -124,7 +113,7 @@
 - #### 解绑一个自定义事件
 
   - ```js
-     this.$off("yiwyn");
+    this.$off("yiwyn");
     ```
 
 - #### 解绑多个事件
@@ -138,10 +127,23 @@
 - #### 解绑所有的事件
 
   - ```
-     this.$off();
+    this.$off();
     ```
 
     
 
 
 
+
+
+## <font color='red'>原生事件</font>
+
+
+
+- #### 当需要在组件上使用原生事件的时候，我们需要添加<font color='red'>native</font>修饰符
+
+  - ```vue
+    <school @click.native="show" /> 
+    ```
+
+  - ##### 如果不添加<font color='red'>native</font>修饰符，那么系统会把<font color='cornflowerblue'>click</font>默认作为自定义事件的来处理
