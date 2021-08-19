@@ -53,5 +53,53 @@
   
 - ##### 方法三
 
-  - ##### ref
+  - ##### 使用<font color='red'>ref</font>配合<font color='red'>$on</font>绑定自定义命令事件
+  
+    - ```vue
+      //模板
+      <school ref="school" />
+      
+      //school内部
+       学校名字：{{ name }}
+      <button @click="sendSchoolName">发送学校姓名</button>
+      
+      //自定义方法指定 in  App.vue
+      mounted() {
+        this.$refs.school.$on("yiwyn", this.getSchoolName);  //给yiwyn自定义指令绑定方法
+      },
+      
+      //方法定义
+      methods: {
+          sendSchoolName() {
+          this.$emit("yiwyn", this.name);
+      }
+      ```
+  
+  - ##### 这种方法可以选择延迟调用绑定自定义事件
+
+
+
+
+
+
+
+## <font color='red'>总结</font>
+
+
+
+- #### 主要差距在于在子组件处的调用方式。
+
+- #### 父组件中的方法定义都是一样的
+
+- #### 子组件处的调用方式主要取决于父组件的传递方式
+
+  - ##### 使用prop传递 
+
+  - ##### 使用v-on:[自定义指令] ="xxx"    在子组件处使用<font color='red'>$emit()</font>激活
+
+  - ##### 使用<font color='red'>ref</font>配合<font color='red'>$on</font>绑定自定义指令   在子组件处使用<font color='red'>$emit()</font>激活
+
+
+
+
 
