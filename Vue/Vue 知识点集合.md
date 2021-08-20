@@ -287,3 +287,16 @@
 
 
 
+
+
+
+
+## <font color='red'>$nextTick(function)</font>
+
+
+
+- #### 在下一次dom更新的时候执行回调
+
+- #### 用处：
+
+  - ##### 在修改数据后，dom还没有更新，但是我们需要操作dom，这个时候可以使用 <font color='cornflowerblue'>this.$nextTick()</font> 使得新dom渲染完成之后进行回调
