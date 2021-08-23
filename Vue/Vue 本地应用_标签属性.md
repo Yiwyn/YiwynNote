@@ -126,12 +126,14 @@ change: function() {
 
 - #### <font color='red'>v-model</font>双向数据绑定(该标签只能在<font color='cornflowerblue'>表单类(输入类)</font>标签中使用)
 
+  - ###### 在下拉菜单<font color='cornflowerblue'>select</font>（不一定非在）中使用时候，v-model.number 可以将收集到的数据强制转换为数字
+
   - ###### 使用该标签可以使<font color='fuchsia'>model</font>层和<font color='fuchsia'>view</font>层的数据相互流通
 
   - ###### v-model绑定的是输入标签的属性 例如:value
 
   
-
+  
   ```html
   <div id="app">
   			单向数据绑定: <input type="text" v-bind:value="data1" /> <br>
@@ -151,7 +153,7 @@ change: function() {
   ```
 
   
-
+  
   
 
 
