@@ -186,6 +186,8 @@
   - #### 若dispatch()的内容在actios中没有任何操作直接commit()那么可以直接在 dispatch 处使用 commit()方法进行提交。
 
   - #### actions中的代码可以简化掉，直接在mutation中进行数据处理即可
+  
+  - #### actions 中可以连续使用dispatch()传递方法，当一个方法中的操作过多时，可以使用dispatch()到actions中的另一个方法。
 
 
 
