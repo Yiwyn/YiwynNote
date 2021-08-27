@@ -86,7 +86,7 @@
                 proxy: {
                     '/test': {
                         target: 'http://localhost:5000',
-                        pathRewrite: { '^/api': '' },  //见下 注
+                        pathRewrite: { '^/test': '' },  //见下 注
                         ws: true,
                         changeOrigin: true
                     }
@@ -96,7 +96,7 @@
 
       - ##### 这种访问请求参数需要添加前缀 <font color='cornflowerblue'>/api</font> 
 
-      - ##### 请求处代码
+      - #### <font color='orange'>请求处代码</font> 
 
         ```js
          axios.get("http://localhost:8080/api/xxx/xxx").then(....)

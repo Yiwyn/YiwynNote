@@ -6,6 +6,7 @@
 - 主要记录
   - SSM框架
   - SpringBoot
+  - SpringCloud
   - VUE
   - .....
 
@@ -21,3 +22,4 @@
 #### 注意
 
 ##### 	<font color='red'>转载标注出处</font>
+

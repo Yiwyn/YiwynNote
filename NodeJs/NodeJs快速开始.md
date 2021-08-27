@@ -1,4 +1,4 @@
-# <font color='red'>Node.js 简介</font>
+## <font color='red'>Node.js 简介</font>
 
 
 
@@ -12,7 +12,7 @@
 
 
 
-# <font color='red'>Node的用途</font>
+## <font color='red'>Node的用途</font>
 
 
 
@@ -25,6 +25,51 @@
 - #### 基于web的应用
 
 - #### 多客户端的通信，如即时通讯
+
+
+
+
+
+
+
+## <font color='red'>Node.js安装</font>
+
+
+
+- ##### 创建 node ⽂件夹并进⼊ 
+
+- ##### 将 Node 的安装包解压
+
+```shell
+[root@localhost node]# tar -xJvf node-v12.16.3-linux-x64.tar.xz
+```
+
+- ##### 解压完之后， /usr/local/node ⽬录中会出现⼀个 ==node-v12.16.3-linux-x64== 的⽬录
+
+##### 
+
+- #### <font color='red'>配置环境变量</font>
+
+  - ##### 编辑 <font color='cornflowerblue'>~/.bash_profile</font> ⽂件，在⽂件末尾追加如下信息：
+
+    ```properties
+    # Nodejs
+    export PATH=/usr/local/node/node-v12.16.3-linux-x64/bin:$PATH
+    ```
+
+- ##### 刷新环境变量
+
+  ```shell
+  source ~/.bash_profile
+  ```
+
+- ##### 检测安装结果
+
+  - ##### node -v 
+
+  - ##### npm version 
+
+  - ##### npx -v
 
 
 
