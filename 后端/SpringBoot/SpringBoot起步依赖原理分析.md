@@ -4,5 +4,5 @@
 
 - # spring-boot-starter-web
 
-  - ###  包含了spring-web 和spring-webmvc等的依赖信息,使用spring webmvc到入这一个依赖足够
+  - ###  包含了spring-web 和spring-webmvc等的依赖信息,使用spring webmvc导入这一个依赖足够
 
