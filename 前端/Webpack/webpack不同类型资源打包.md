@@ -117,7 +117,9 @@
                   loader: "url-loader",  
                   options: {
                       //小于8kb，就会被base64处理
-                      limit: 8 * 1024
+                      limit: 8 * 1024,
+                      name:"[hash:10].[ext]",  //改修命名为10位
+                      esModule:false    		 //关闭es6模块化
                   }
               }
           ]

@@ -24,7 +24,7 @@
 
 
 
-- #### 配置
+- ### 配置
 
   ##### webpack.config.js
 
@@ -37,10 +37,29 @@
           static: {
               directory: resolve(__dirname, "build")
           },
-          compress: true,
-          port: 8081
+          compress: true,  //使用gzip压缩
+          port: 8081,		 //打开的端口号
+          open:true		 //自动打开浏览器
       }
   }
   ```
 
   
+
+
+
+- ### 启动方式
+
+  - #### cli启动
+
+    ```shell
+    npx webpack server
+    ```
+
+  - #### 全局命令使用 需要先安装
+
+    ```shell
+    webpack-dev-server
+    ```
+
+  - #### 当发生变化的时候，系统会自动进行编译
