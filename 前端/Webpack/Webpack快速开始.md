@@ -36,7 +36,7 @@
 
 - #### 运行指令
 
-  - ##### 开发环境：webpack ./src/index.js -o ./build/built.js --mode=develpoment
+  - ##### 开发环境：webpack ./src/index.js -o ./build/built.js --mode=development
 
     - ###### webpack会以./src/index.js为入口文件开始打包，打包后输出到 ./build/built.js 整体打包环境时<font color='red'>开发环境</font>
     
@@ -48,5 +48,5 @@
 
   - ##### 打包完成之后
   
-  - ##### 在<font color='cornflowerblue'>build</font>中创建html文件引入
+  - ##### 在<font color='cornflowerblue'>build</font>中创建html文件引入观察效果
 

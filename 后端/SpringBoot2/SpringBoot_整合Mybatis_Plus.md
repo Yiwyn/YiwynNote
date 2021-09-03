@@ -51,6 +51,14 @@
     ```
 
   - ##### <font color='fuchsia'>BaseMapper</font>接口已经包含了常用的sql方法
+  
+  - ##### <font color='fuchsia'>UserMapper</font>中包含的查询方法中使用条件查询
+  
+    ```java
+    userMapper.selectOne(new QueryWrapper<>().eq("colName",Value))
+    ```
+  
+    - ##### 使用<font color='red'>eq（equal）</font>可以对属性进行判断。相当于 where xxx =xxx ，eq方法可以<font color='red'>连续使用</font>
 
 
 
