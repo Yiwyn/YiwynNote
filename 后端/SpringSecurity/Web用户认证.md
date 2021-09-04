@@ -17,14 +17,13 @@
 
   - #### 通过配置类
 
-    - ##### 创建类并添加注解<font color='orange'>@Configuration</font>
+    - ##### 创建类并添加注解<font color='orange'>@EnableWebSecurity</font>
 
     - ##### 继承<font color='cornflowerblue'>WebSecurityConfigurerAdapter</font>类
 
     - ##### 重写<font color='red'>configure</font>方法
 
       ```java
-      @Configuration
       @EnableWebSecurity
       public class SecurityConfig extends WebSecurityConfigurerAdapter {
           @Override
@@ -42,6 +41,21 @@
       ```
       
     - ##### <font color='red'>BCryptPasswordEncoder</font> 这个类可以对密码进行加密。同时要在配置文件中创建Bean对象
+  
+    - #### <font color='red'>注</font>
+  
+      - ##### 为什么这里的配置文件没有添加<font color='red'>configuration</font>注解，而是使用了<font color='red'>EnableWebSecurity</font>注解，因为EnableWebSecurity注解包含了三个注解
+  
+        ```java
+        @Import({WebSecurityConfiguration.class, SpringWebMvcImportSelector.class, OAuth2ImportSelector.class, HttpSecurityConfiguration.class})
+        @EnableGlobalAuthentication
+        @Configuration
+        public @interface EnableWebSecurity {
+            boolean debug() default false;
+        }
+        ```
+  
+      - ##### 因为该注解包含了 <font color='red'>configuration</font>注解，所以配置文件只需要添加<font color='red'>EnableWebSecurity</font>注解即可
   
   - #### 自定义编写实现类
   
