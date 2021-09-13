@@ -1,6 +1,6 @@
-- ### <font color='red'>案例1</font>
+- ## <font color='red'>案例1</font>
 
-  - ##### 在sql中 两个表相互独立，使用第三个表来联系连个表的关系。
+  - #### 在sql中 两个表相互独立，使用第三个表来联系连个表的关系。
 
     - ##### sql查询如下
 
@@ -55,4 +55,11 @@
 
       - ##### 只是用两个表查询 如上 ，在处理另一个表的数据时，使用联系表中的主键，使用相关方法获取。本质上也是三个表，只是将操作分开
 
-      - ##### <font color='cornflowerblue'>collection</font>标签中，column 属性的值 为 select属性使用函数的参数
+        - ##### <font color='cornflowerblue'>collection</font>标签中，column 属性的值 为 select属性使用函数的参数
+      
+      - ##### 使用三个表查询  两个and符号 ，获取所有的列名，这样在resultMap的<font color='cornflowerblue'>collection</font>中直接写对应关系，不需要使用column和select调用其他的mapper函数
+      
+      
+    
+  - #### 问题的本质为如何使用mybatis完善查询类的信息。
+
