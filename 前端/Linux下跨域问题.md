@@ -61,3 +61,22 @@ http {
 - ### 前端使用
 
   - #### 前端访问后台接口的时候使用监听的接口
+
+
+
+
+
+- #### 有些网站例如图片网站，如果使用链接连接他们的图片，这个时候图片服务器会先发送一个 “OPTION” 请求
+
+```javascript
+  location / {
+            root   html/dist;
+            index  index.html index.htm;
+            
+            if ($request_method = 'OPTIONS') {
+                  return 204;
+             }   
+        }
+```
+
+##### 这样 有些403的图片就可以顺利访问了
