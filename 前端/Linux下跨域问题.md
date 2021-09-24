@@ -22,7 +22,7 @@ http {
         # 允许带上cookie请求
         add_header 'Access-Control-Allow-Credentials' 'true';
         # 允许请求的方法，比如 GET/POST/PUT/DELETE
-        add_header 'Access-Control-Allow-Method' *;
+        add_header 'Access-Control-Allow-Methods' *;
         # 允许请求的header
         add_header 'Access-Control-Allow-Headers' *;
 
