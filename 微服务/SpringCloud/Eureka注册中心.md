@@ -193,3 +193,32 @@
 
 
 
+
+
+</br><hr></br>
+
+
+
+
+
+## <font color='red'>actuator微服务信完善</font>
+
+
+
+
+
+- #### 配置eureka中服务的名称和显示ip
+
+  - #### 修改服务的application.yml
+
+    ```yaml
+    eureka:
+      client:
+    	....
+      instance:
+        instance-id: payment8081
+        prefer-ip-address: true
+    ```
+
+    
+
