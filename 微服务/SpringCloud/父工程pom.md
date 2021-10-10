@@ -43,12 +43,11 @@
 
     <!--    锁定版本+子modlue不用写groupId和version &ndash;&gt;-->
     <dependencyManagement>
-        <dependencies>
-            <!--spring boot -->
+        <!--spring boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.4.11</version>
+                <version>2.3.4.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -57,9 +56,9 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2020.0.4</version>
+                <version>Hoxton.SR12</version>
                 <type>pom</type>
-                <scope>runtime</scope>
+                <scope>import</scope>
             </dependency>
 
             <!--spring cloud alibaba 2.1.0.RELEASE-->
@@ -118,3 +117,6 @@
 </project>
 ```
 
+
+
+- 

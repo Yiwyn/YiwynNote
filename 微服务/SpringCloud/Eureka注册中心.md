@@ -222,3 +222,88 @@
 
     
 
+
+
+</br><hr></br>
+
+
+
+
+
+## <font color='red'>使用DiscoveryClient</font>
+
+
+
+- ```java
+  import org.springframework.cloud.client.discovery.DiscoveryClient; //导入对象
+  
+  @Resource
+  private DiscoveryClient discoveryClient;  //引入bean对象
+  
+  
+  //使用
+  
+  //获取当前eureka中的服务列表
+  List<String> services = discoveryClient.getServices();   
+  
+  //获取某个服务里面的所有实例对象
+   List<ServiceInstance> instances = discoveryClient.getInstances("PAYMENT-SERVE");
+  
+  ```
+
+- ##### 后期使用较多
+
+
+
+
+
+</br><hr></br>
+
+
+
+
+
+
+
+## <font color='red'>Eureka自我保护</font>
+
+
+
+
+
+#### ？当我们进入Eureka后台看到红色的
+
+#### <font color='red'>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE</font> <font color='red'>LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</font>
+
+#### 则表示进入了保护模式
+
+
+
+
+
+- ####  为什么会产生自我保护机制
+
+  - ##### 为了防止EurekaClient可以正常运行，但是与EurekaServer网络不同情况下，EurekaServer<font color='red'>不会立刻</font>将EurekaClient服务剔除
+
+- #### 什么是自我保护模式
+
+  - ##### 默认情况下，如果EurekaServer在一定时间没有接收到某个服务实例的心跳，EurekaServer将会注销该实例（90s），但是当网络分区发生故障时（延时、卡顿、拥挤）时，微服务与EurekaServer之间无法正常通信，以上行为可能变得非常危险，因为微服务本身是健康的，这个时候不应该剔除该服务。Eureka通过“自我保护模式”来解决这个问题。
+
+  - ##### 当EurekaServer节点在短时间内丢失过多客户端时，那么这个节点就会进入自我保护模式
+
+
+
+- #### 关闭自我保护
+
+  - ##### eurekaServer服务的application.yaml修改
+
+    ```yaml
+    eureka:
+      server:
+    #    关闭自我保护
+        enable-self-preservation: false
+    #    等待时间
+        eviction-interval-timer-in-ms: 2000
+    ```
+
+    
