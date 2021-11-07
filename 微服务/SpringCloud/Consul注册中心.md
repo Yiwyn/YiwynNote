@@ -120,14 +120,13 @@
   
   
       @GetMapping("/{id}")
-  
       public Payment getPaymentById(@PathVariable("id") long id) {
           Payment payment = restTemplate.getForObject(PAYMENT_URL +xxxx, Payment.class);
           return payment;
       }
   ```
-
-  - ##### 这里和zookeeper使用是一样的
+  
+- ##### 这里和zookeeper使用是一样的
 
 
 
