@@ -30,3 +30,10 @@
 
   
 
+- #### 重新启动网络
+
+  - ```shell
+    systemctl restart network
+    ```
+
+    
