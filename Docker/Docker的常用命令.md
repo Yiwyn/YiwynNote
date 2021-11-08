@@ -227,7 +227,7 @@ docker ps -aq | xargs docker rm #删除全部容器
 
 
 
-##### 穷的那个和停止容器操作
+##### 启动和停止容器操作
 
 ```shell
 docker start 容器id
@@ -295,7 +295,31 @@ root                13756               13738               0                   
 
 ##### 进入当前正在运行的容器
 
+```shell
+#我们的容器通常是使用后台方式运行的，需要进入容器，修改一些配置。
+
+#命令1
+docker exec -it 容器id bashShell
+
+#进入挂载后台的centos
+docker exec -it b0da3388f723 /bin/bash	
+
+#命令2
+docker attach 容器id
+
+
+#区别
+#docker exec   #进入容器后开启一个新的终端，可以在里面操作
+#docker attach #进入容器正在执行的终端，不会启动新的进程
 ```
+
+
+
+##### 从容器内拷贝文件到本机上
+
+```shell
+docker cp 容器id:容器内路径 目标的主机路径
+[root@localhost ~]# docker cp b0da3388f723:/home/test.java /home
 
 ```
 
