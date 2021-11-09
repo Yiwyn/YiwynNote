@@ -7,7 +7,9 @@
 DATE_FORMAT函数
 
 ```mysql
-DATE_FORMAT("2021-11-05 00:00:00", '%Y-%m-%d' ) = DATE_FORMAT(now(),'%Y-%m-%d')
+DATE_FORMAT("2021-11-05 00:00:00", '%Y-%m-%d' ) = DATE_FORMAT(now(),'%Y-%m-%d')  //可以判断相等
+
+DATE_FORMAT("2021-11-05 00:00:00", '%Y-%m-%d' ) > DATE_FORMAT(now(),'%Y-%m-%d')  //可以判断
 ```
 
 

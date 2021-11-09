@@ -43,6 +43,7 @@
 
     <!--    锁定版本+子modlue不用写groupId和version &ndash;&gt;-->
     <dependencyManagement>
+          <dependencies>
         <!--spring boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
