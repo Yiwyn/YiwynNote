@@ -68,3 +68,8 @@
   - #### <font color='red'>注</font>
 
     - ##### 这里<font color='cornflowerblue'>fallbackMethod</font>参数的需要的函数，一定要和被绑定方法的<font color='red'>返回值和参数一致</font> 
+
+- #### 测试
+
+  - ##### 不停的输入错误的信息 value = 0 当到一定次数的时候，即使输入正确的数字也不能正常访问，等待一段时间之后会可以重新访问
+
