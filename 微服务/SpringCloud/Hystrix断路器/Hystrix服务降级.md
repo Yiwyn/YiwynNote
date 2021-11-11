@@ -160,6 +160,62 @@
 
 - ### <font color="origan">全局服务降级</font>
 
-- #### 为Feign客户端定义的接口添加一个服务降级处理的实现类
+- ##### 为Feign客户端定义的接口添加一个服务降级处理的实现类
 
-- //这里存在问题
+- ##### 因为调用服务都是通过<font color='red'>Feign</font>进行的，所以可以使用Feign集成的Hystrix来处理服务降级
+
+- ##### 通过实现<font color='orange'>@FeignClient</font>注解标记的接口
+
+  ```java
+  @Component
+  public class SchoolHystrixService implements SchoolService {
+      @Override
+      public Student getStudent(long id) {
+          return new Student();
+      }
+      @Override
+      public String getError(int value) {
+          return "出现错误";
+      }
+  }
+  
+  //SchoolService 接口如下
+  
+  @Component
+  @FeignClient(value = "STUDENT-SERVICE", fallback = SchoolHystrixService.class)
+  public interface SchoolService {
+  
+      @GetMapping("/student/{id}")
+      public Student getStudent(@PathVariable("id") long id);
+  
+      @GetMapping("/student/error/{value}")
+      public String getError(@PathVariable("value") int value);
+  }
+  
+  ```
+
+- ##### 通过完善<font color='orange'>@FeignClient</font>注解的参数，把service实现对象引入，这样可以对远程调用的服务方法都进行降级处理
+
+- ### <font color='red'>注</font>：这里service接口不可以直接在接口上使用<font color='orange'>@RequestMapping</font> 如：
+
+  ```java
+  @Component
+  @FeignClient(value = "STUDENT-SERVICE", fallback = SchoolHystrixService.class)
+  @RequestMapping("/test")             //这样是不可行的，会报错
+  public interface SchoolService {
+   //....
+  }
+  ```
+
+- ##### <font color='cornflowerblue'>application</font>文件
+
+  ```yaml
+  feign:
+    hystrix:
+      enabled: true
+  ```
+
+  - ##### <font color='red'>打开feign的hystrix功能</font>
+
+- #### 此时，访问服务消费者调用的其他服务的接口都会有服务降级
+
