@@ -185,7 +185,7 @@
   @FeignClient(value = "STUDENT-SERVICE", fallback = SchoolHystrixService.class)
   public interface SchoolService {
   
-      @GetMapping("/student/{id}")
+      @GetMapping("/student/user/{id}")
       public Student getStudent(@PathVariable("id") long id);
   
       @GetMapping("/student/error/{value}")
