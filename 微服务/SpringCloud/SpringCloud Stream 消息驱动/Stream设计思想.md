@@ -20,3 +20,5 @@
 
     - ##### 在kafka中就是Topic
 
+- ![Spring Cloud Stream 应用模型](https://docs.spring.io/spring-cloud-stream/docs/Ditmars.RELEASE/reference/htmlsingle/images/SCSt-with-binder.png)
+
