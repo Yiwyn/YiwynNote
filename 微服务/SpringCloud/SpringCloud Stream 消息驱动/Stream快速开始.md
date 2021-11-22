@@ -161,4 +161,4 @@
 
 - #### 当服务提供者发送消息时，服务消费者会自动获取到发送的值
 
-- #### 来自<font color='cornflowerblue'>destination: studyExchange</font> 定义的交互组件
+- #### 来自<font color='cornflowerblue'>destination: studyExchange</font> 定义的交互组件  
