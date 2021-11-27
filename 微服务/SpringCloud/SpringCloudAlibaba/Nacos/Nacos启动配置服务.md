@@ -25,6 +25,13 @@
       nacos:
         config:
           server-addr: 192.168.200.41:8848
+          file-extension: yaml			//可指定文件类型 仅支持 properties 或 yaml
+          group: DEV-GROUP				//可指定分组
+        discovery:
+          server-addr: 192.168.200.41:8848
+  
+    profiles:				//运行profiles 不可缺少
+      active: dev
   ```
 
 
@@ -47,3 +54,36 @@
 
     - ##### 通过Spring Cloud 原生注解 <font color='orange'>@RefreshScope</font> 来实现配置自动更新
 
+
+
+
+
+<hr>
+
+
+
+## <font color='red'>配置文件配置</font>
+
+
+
+- #### 项目启动之前需要先创建配置文件
+
+  - ##### 在nacos管理面板中，<font color='cornflowerblue'>配置管理-配置列表</font>  添加配置项 
+
+  - ##### <font color='red'>DataId </font>：上述 ↑ 组合bootstrap.yml中的信息
+
+  - ##### <font color='red'>Group</font>：上述 ↑ bootstrap.yml 配置文件中已注释
+
+  - ##### <font color='red'>配置内容</font>：yaml文件 或者 properties 文件
+
+- #### <font color='red'>例</font>
+
+
+
+| Data Id               | Group     | 归属应用: | 操作                             |
+| :-------------------- | :-------- | :-------- | -------------------------------- |
+| nacos-config-dev.yaml | DEV-GROUP |           | 详情\|示例代码\|编辑\|删除\|更多 |
+
+
+
+##### 此时启动项目，项目会自动获取配置文件，并且在文件中心编辑文件可发布配置信息。
