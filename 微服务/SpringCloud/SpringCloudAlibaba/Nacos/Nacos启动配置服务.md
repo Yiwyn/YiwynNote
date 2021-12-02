@@ -7,7 +7,7 @@
   ```xml
           <dependency>
               <groupId>com.alibaba.cloud</groupId>
-              <artifactId>spring-cloud-alibaba-nacos-config</artifactId>
+              <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
           </dependency>
   ```
 
