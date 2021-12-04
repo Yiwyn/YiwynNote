@@ -111,9 +111,43 @@
 
 
 
-## <font color='red'>reactive</font>
+## <font color='red'>reactive</font>（响应的）
 
 
 
-- 
+- ##### 作用：定义一个<font color='red'>对象类型</font>的响应式数据(基本类型不能用他,要用<font color='cornflowerblue'>ref</font>函数)
+
+- ##### 语法 <font color='orange'>const 代理对象 = reactive(源对象)</font> 接受一个对象(或数组)，返回一个<font color='red'>代理对象</font>（proxy的实例对象），这里的目的是为了让数据变为响应式的
+
+- ##### 使用了<font color='cornflowerblue'>reactive</font>操作对象将变得简单，不再需要使用value得到对象的值
+
+  ```vue
+  <script>
+  import { reactive } from "vue";
+  export default {
+    setup(props) {
+      const person = reactive({
+        name: "Yiwyn",
+        age: 18,
+      });
+  
+      function changeName(name) {
+        console.log("person", person);
+        person.name = name;
+      }
+  
+      return {
+        person,
+        changeName,
+      };
+    },
+  };
+  </script>
+  ```
+
+- ##### 日常中<font color='red'>reactive</font>使用较多，可以将定义ref中的参数封装为一个对象，这样就可以使用reactive来处理，增强代码可读性
+
+- ##### reactive 定义的响应式是深层次的
+
+- ##### 内部基于ES6的Proxy实现，通过代理对象操作源对象内部数据进行操作，并且可以被vue截获。
 
