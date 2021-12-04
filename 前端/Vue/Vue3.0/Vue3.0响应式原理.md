@@ -97,4 +97,6 @@ const p = new Proxy(person,{
 //创建了代理 p ，这个时候 p和person 是映射关系， 修改了p的属性，这个时候person也会响应的被修改 
 ```
 
+
+
 ​	
