@@ -25,21 +25,19 @@
 - #### var 是全局作用域，let是块级作用域
 
   - ```javascript
-    　　<script>    
-            if(true) {
-                var a = 1;
-            }
-            console.log(a);  //a仍然可以打印
-        </script>
-    
-    
-    　　<script>
-            if(true) {
-                let a = 1;
-            }
-            console.log(a); //会报错，a只有在if{}块中才可以被打印
-        </script>
-    ```
-
-    
-
+    　　	<script>    
+           	 if(true) {
+               	 var a = 1;
+          	  }
+           	 console.log(a);  //a仍然可以打印
+       	 </script>
+      
+      
+        　　<script>
+                if(true) {
+                    let a = 1;
+                }
+                console.log(a); //会报错，a只有在if{}块中才可以被打印
+            </script>
+  
+ 
