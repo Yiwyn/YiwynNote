@@ -69,6 +69,8 @@ export default {
 
 
 
+#### <font color='red'>window.Proxy</font>
+
 ```javascript
 //ES6中Proxy
 var person = {
@@ -98,5 +100,17 @@ const p = new Proxy(person,{
 ```
 
 
+
+</br><hr></br>
+
+
+
+
+
+#### <font color='red'>window.Reflect</font>
+
+```
+l
+```
 
 ​	
