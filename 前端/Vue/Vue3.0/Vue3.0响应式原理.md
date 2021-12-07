@@ -107,10 +107,51 @@ const p = new Proxy(person,{
 
 
 
-#### <font color='red'>window.Reflect</font>
+#### <font color='red'>window.Reflect</font>（反射）
 
-```
-l
+```javascript
+let obj = {a:1,b,2}
+
+Reflect.set(obj,"a",newValue)
+Reflect.get(obj,"a")
+Reflect.deleteProperty(obj,"a")
 ```
 
-​	
+- #### Reflect 执行操作不会报错，他会把操作以返回值 boolean 的形式返回，在代码出现错误的时候不会因为错误操作而报错，这样可以有效的减少 try catch的使用
+
+
+
+
+
+
+
+
+
+## <font color='red'>Vue3中响应式实现</font>
+
+
+
+```javascript
+        const person = {
+            name: "Yiwyn",
+            age: 18
+        }
+
+        // vue 响应式原理
+        const pp = new Proxy(person, {
+            get(target, propName) {
+                console.log("获取target的值");
+                return Reflect.get(target, propName)
+            },
+            set(target, propName, value) {
+                console.log("设置属性的值");
+                return Reflect.set(target, propName, value)
+            },
+            deleteProperty(target, propName) {
+                console.log("删除属性");
+                return Reflect.deleteProperty(target, propName)
+            }
+        })
+```
+
+- ##### 代理与反射对应操作
