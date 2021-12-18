@@ -74,9 +74,17 @@
 
 
 
+
+
 > #### 方法归纳
 >
 > [【深入浅出SpringBoot】RedisTemplate使用方法归纳 - 简书 (jianshu.com)](https://www.jianshu.com/p/0fa4c100e9a9)
 
 
 
+
+
+
+- ### <font color='red'>注</font>
+
+  - #### <font color='cornflowerblue'>redis</font> 保存的对象，字段需要<font color='orange'>get</font>、<font color='orange'>set</font>方法，同时需要一个<font color='orange'>无参的构造函数</font>。否则redis处理对象的时候无法解析
