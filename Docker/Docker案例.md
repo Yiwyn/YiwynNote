@@ -15,3 +15,29 @@ docker exec -it 容器id(名字) bin/bash
 //进入容器
 ```
 
+
+
+
+
+
+
+
+
+## <font color='red'>mysql</font>
+
+
+
+```shell
+//下载mysql镜像
+sudo docker pull mysql
+
+//启动mysql
+sudo docker run -d -v /usr/local/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306  mysql:tag --name costomName
+```
+
+- ##### -e 设置环境变量，这里设置密码
+
+- ##### -p 设置端口映射
+
+- ##### -v 文件映射，这样在容器外部可以查看容器内的数据
+
