@@ -59,6 +59,10 @@
 
 - ##### 阿里云镜像安装
 
+  > ##### [容器镜像服务 (aliyun.com)](https://cr.console.aliyun.com/cn-shanghai/instances/mirrors)
+
+  > ###### 	[Docker CE 镜像源站-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/110806)
+
   ```shell
   # step 1: 安装必要的一些系统工具
   sudo yum install -y yum-utils device-mapper-persistent-data lvm2
