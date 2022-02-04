@@ -49,21 +49,54 @@
   public class RedisConfig {
   
       @Bean
-      public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
-          RedisTemplate<String, Object> redisTemplate = new RedisTemplate();
-          //Stirng类型 key 序列器
-          redisTemplate.setKeySerializer(new StringRedisSerializer());
-          //String类型 value 序列器
-          redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+      @SuppressWarnings("all")
+      public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
   
-          //Hash类型 key 序列器
-          redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-          //Hash类型 Value序列器
-          redisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
-          redisTemplate.setConnectionFactory(connectionFactory);
-          return redisTemplate;
+          RedisTemplate<String, Object> template = new RedisTemplate<>();
+          template.setConnectionFactory(factory);
+  
+          Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = this.jackson2JsonRedisSerializer();
+  
+          //String序列化
+          StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+          //key采用string的序列化方式
+          template.setKeySerializer(stringRedisSerializer);
+          //hash的key采用string的序列化方式
+          template.setHashKeySerializer(stringRedisSerializer);
+          //value序列化也采用jackson
+          template.setValueSerializer(jackson2JsonRedisSerializer);
+          //hash的value也采用jackson
+          template.setHashValueSerializer(jackson2JsonRedisSerializer);
+          template.afterPropertiesSet();
+  
+          return template;
       }
+  
+      /**
+       * 自定义jackson2JsonRedisSerializer对象
+       *
+       * @return
+       */
+      private Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer() {
+          Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer =
+                  new Jackson2JsonRedisSerializer<>(Object.class);
+  
+          ObjectMapper objectMapper = new ObjectMapper();
+          objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+          objectMapper.configure(MapperFeature.USE_ANNOTATIONS, false);
+          objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+          objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+          // 此项必须配置，否则会报java.lang.ClassCastException: java.util.LinkedHashMap cannot be cast to XXX
+          objectMapper.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL
+                  , JsonTypeInfo.As.PROPERTY);
+          objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+          jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
+          return jackson2JsonRedisSerializer;
+      }
+  
+  
   }
+  
   ```
   
   - ##### <font color='red'>StringRedisSerializer</font> : key value 为字符串的场景，将数据字节序列编码为字符串
