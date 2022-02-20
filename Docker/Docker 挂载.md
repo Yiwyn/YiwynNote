@@ -60,6 +60,15 @@
 
 
 
+#### <font color='red'>挂载出现问题</font> 
+
+##### docker 运行出错 Error response from daemon: error creating overlay mount to /var/lib/docker/overlay2/007
+
+```tex
+这个问题的是由于selinux造成的，CentOS的selinux是关闭的，而docker上的selinux却是开启的，因此docker运行时会产生如上错误。
+解决方案无非是要么都关闭，要么都开启。参看https://github.com/coreos/bugs/issues/2340，推荐修改CentOS下的/etc/selinux/config 将SELINUX=disabled 改成 SELINUX=permissive
+```
+
 
 
 
