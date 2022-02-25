@@ -14,6 +14,12 @@ docker 命令 --help #帮助命令
 
 
 
+> ##### docker 命令本身对参数顺序是敏感的 
+>
+> ##### 	例如 -p 映射端口的命令如果放在最后可能会被docker 理解为 启动镜像来处理的参数 
+>
+> ##### 	so  -p 参数应该在 -v 映射文件 -e 环境配置 之前
+
 
 
 
@@ -184,6 +190,16 @@ docker run [可选参数] image
 #退出容器
 exit  #容器中退回主机
 ```
+
+##### 追加启动参数
+
+```shell
+docker container update <containerId> ...
+
+docker container myNginx --restart=always  //docker重启容器自动重启
+```
+
+
 
 
 

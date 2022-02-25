@@ -19,10 +19,6 @@ docker exec -it 容器id(名字) bin/bash
 
 
 
-
-
-
-
 ## <font color='red'>mysql</font>
 
 
@@ -32,7 +28,7 @@ docker exec -it 容器id(名字) bin/bash
 sudo docker pull mysql
 
 //启动mysql
-sudo docker run -d -v /usr/local/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306  mysql:tag --name costomName
+sudo docker run -d -p 3306:3306 -v /usr/local/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password   mysql:tag --name costomName
 ```
 
 - ##### -e 设置环境变量，这里设置密码
@@ -40,4 +36,27 @@ sudo docker run -d -v /usr/local/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=pas
 - ##### -p 设置端口映射
 
 - ##### -v 文件映射，这样在容器外部可以查看容器内的数据
+
+
+
+
+
+## <font color='red'>redis</font>
+
+
+
+> ##### [Redis configuration – Redis](https://redis.io/topics/config)
+>
+> ##### redis官网下载
+
+```shell
+sudo docker run -d -v /usr/local/yiwynfile/redis/conf/:/usr/local/etc/redis -p 6379:6379 --name myRedis redis redis-server /usr/local/etc/redis/redis.conf
+```
+
+##### 配置文件
+
+```shell
+bind 0.0.0.0  #允许远程访问
+requirepass xxxx #设置连接密码
+```
 
