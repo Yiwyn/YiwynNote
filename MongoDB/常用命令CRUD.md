@@ -4,6 +4,8 @@
 
 
 
+## <font color='red'>文档谨慎观看，部分方法已经过时</font>
+
 
 
 - ### <font color='red'>数据库操作</font>
