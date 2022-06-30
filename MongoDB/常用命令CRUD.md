@@ -153,10 +153,10 @@
   - ##### 覆盖的修改
 
     ```mysql
-    db.mycollection.update({name:"yiwyn"},{name:"Yiwyn"})
+    db.mycollection.replaceOne({name:"yiwyn"},{name:"Yiwyn"})
     ```
 
-    - ##### 这种更新形式会将原数据覆盖，仅保留update的json
+    - ##### 这种更新形式会将原数据覆盖，仅保留replaceOne的json
 
   - ##### 局部修改
 
