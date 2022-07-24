@@ -196,7 +196,7 @@ exit  #容器中退回主机
 ```shell
 docker container update <containerId> ...
 
-docker container myNginx --restart=always  //docker重启容器自动重启
+docker container update myNginx --restart=always  //docker重启容器自动重启
 ```
 
 
