@@ -38,7 +38,7 @@
       sentinel:					
         transport:
           port: 8719
-          dashboard: 192.168.201.36:8080  //启用dashboard的地址
+          dashboard: 192.168.201.36:8080  //启用dashboard的地址,这里的结尾一定不可以加上/
   ```
 
   ##### 这里 <font color='cornflowerblue'>spring.cloud.sentienl.transport.port</font> 端口配置会在应用对应的机器上启动一个Http Server规则，该Server 会与 Sentinel 控制台做交互。比如 Sentinel 控制台添加了一个限流规则，会把规则数据push给这个Http Server 接收，Http Server 再将规则注册到Sentinel 中
