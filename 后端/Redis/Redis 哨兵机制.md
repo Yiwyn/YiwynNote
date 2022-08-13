@@ -1,0 +1,1 @@
+### Redis 哨兵(Sentinel)模式

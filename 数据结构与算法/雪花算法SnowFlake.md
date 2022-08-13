@@ -49,15 +49,17 @@
 #### code
 
 ```java
-package com.yiwyn.util;
+package fun.lifepoem.utils;
 
 /**
  * @author Yiwyn
- * @create 2021/12/26 0:32
+ * @create 2022/7/25 19:07
+ */
+
+/**
+ * 雪花算法实现工具类
  */
 public class SnowFlakeUtil {
-
-
     /**
      * 组成部分
      */
@@ -66,7 +68,7 @@ public class SnowFlakeUtil {
     //时间戳
 
     //workid
-    private long wordId;
+    private long workId;
     //序列号
     private long sequence = 0L;
 
@@ -87,7 +89,7 @@ public class SnowFlakeUtil {
      */
 
     //workId 左移12位 即是 序列id的位数
-    private final long wordIdShift = sequenceBit;
+    private final long workIdShift = sequenceBit;
 
     //时间id需要左移 sequenceId bit长度+ workId bit长度
     private final long timestampShift = sequenceBit + workIdBit;
@@ -106,11 +108,11 @@ public class SnowFlakeUtil {
     private long lastTimestamp = -1L;
 
 
-    public SnowFlakeUtil(long wordId) {
-        if (wordId < 0 || wordId > maxWorkId) {
-            throw new IllegalArgumentException("wordId 错误");
+    private SnowFlakeUtil(long workId) {
+        if (workId < 0 || workId > maxWorkId) {
+            throw new IllegalArgumentException("workId 错误");
         }
-        this.wordId = wordId;
+        this.workId = workId;
     }
 
     /**
@@ -138,7 +140,7 @@ public class SnowFlakeUtil {
          * 返回唯一id
          */
         return (currenTimestamp << timestampShift) |
-                (wordId << wordIdShift) |
+                (workId << workIdShift) |
                 (sequence);
     }
 
@@ -152,7 +154,6 @@ public class SnowFlakeUtil {
 
 
 }
-
 ```
 
 
