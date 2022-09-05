@@ -28,8 +28,10 @@
 
 - ```shell
   npm create vite@latest
+  or
+  npm init vite
   ```
-
+  
 - #### 进入项目目录安装modules
 
   ```shell
