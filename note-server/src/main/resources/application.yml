@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: lifepoem-blog
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: lpadmin
+    password: w3%V%zDm5P0+Kv3W
+    url: jdbc:mysql://124.222.75.41:3306/lifepoem_blog
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+gitee:
+  base-url: https://gitee.com/api/v5/repos/Yiwyn/YiwynNote/contents/
+  base_download_url: https://gitee.com/yiwyn/YiwynNote/raw/master/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+
+note:
+  file-locations: F:\学习笔记\YiwynNote
