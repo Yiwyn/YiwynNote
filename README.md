@@ -32,4 +32,4 @@
 
 
 
-<img src="README.assets/jb_beam.png" alt="jb_beam" style="zoom: 33%;" />
+<img src="http://file.lifepoem.fun/note/jb_beam.png" alt="jb_beam" style="zoom: 25%;" />
