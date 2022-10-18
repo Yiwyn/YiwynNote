@@ -16,16 +16,21 @@
 
   - ##### 实例方法
 
-  - ##### 返回当前线程中断标志状态(Boolean)
+  - ##### 返回当前线程中断标志<font color='cornflowerblue'>interrupted</font>状态(Boolean)
 
 - ##### interrupted ：
 
   - ##### 静态方法
 
-  - ##### 返回当前线程中断标志状态(Boolean)，同时将中断标志设置为false
+  - ##### 返回当前线程中断标志<font color='cornflowerblue'>interrupted</font>状态(Boolean)，同时将中断标志设置为false
 
 - ##### interrupt ：
 
   - ##### 实例方法
 
-  - ##### 将当前线程的中断标志设置为true，不会停止线程
+  - ##### 将当前线程的中断标志<font color='cornflowerblue'>interrupted</font>设置为true，不会停止线程
+
+
+
+##### <font color='orange'>【补充】</font>若当前的线程实例被标记为interrupted，则在调用wait、join、sleep相关方法，并且正在阻塞状态中，此中断状态会被清除(设置为false)，并触发InterruptedException
+
