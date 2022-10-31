@@ -1,23 +1,3 @@
-##### 2022/8
-
-#### <font color='red'>Nginx </font>
-
-#### <font color='red'>Jenkins</font>
-
-
-
-====
-
-##### 一定要努力学习完成
-
-
-
-
-
-
-
-
-
 #### MySQL 
 
 - ##### ~~ACID事务特性~~  

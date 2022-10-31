@@ -15,15 +15,15 @@
 ```java
 // 将Map转换为Bean 
 	public MyBean GiteeUnit BuilderFromMap(Map param) {
-        MyBean beawn = new MyBean();
+        MyBean bean = new MyBean();
         BeanMap beanMap = BeanMap.create(bean);
         beanMap.putAll(param);
-        return giteeUnit;
+        return bean;
     }
 
 
 // 将Bean转换为Map
-	public void GiteeUnit BuilderFromMap(MyBean bean) {
+	public void BuilderFromMap(MyBean bean) {
         BeanMap beanMap = BeanMap.create(bean);
 		//beanMap 则为bean对象映射出来的map对象
     }
