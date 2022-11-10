@@ -55,5 +55,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       
+  network:
+  	test_net:
 ```
 
