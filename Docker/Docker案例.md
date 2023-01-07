@@ -28,7 +28,7 @@ docker exec -it 容器id(名字) bin/bash
 sudo docker pull mysql
 
 //启动mysql
-sudo docker run -d -p 3306:3306 -v /usr/local/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password   mysql:tag --name costomName
+sudo docker run -d --name costomName -p 3306:3306 -v /usr/local/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password   mysql:tag 
 ```
 
 - ##### -e 设置环境变量，这里设置密码
@@ -48,6 +48,8 @@ sudo docker run -d -p 3306:3306 -v /usr/local/mysql:/var/lib/mysql -e MYSQL_ROOT
 > ##### [Redis configuration – Redis](https://redis.io/topics/config)
 >
 > ##### redis官网下载
+>
+> ##### 首先需要将redis配置文件放入宿主机映射文件夹下
 
 ```shell
 sudo docker run -d -v /usr/local/yiwynfile/redis/conf/:/usr/local/etc/redis -p 6379:6379 --name myRedis redis redis-server /usr/local/etc/redis/redis.conf
