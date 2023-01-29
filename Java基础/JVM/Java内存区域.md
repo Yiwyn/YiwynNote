@@ -70,6 +70,24 @@
 
 ##### Java方法有两种返回方式，一种是return语句正常返回，一种是抛出异常。不管是哪种返回方式，都会导致栈帧被弹出。也就是说，<font color='red'>栈帧随着方法调用而创建，随着方法结束而销毁。无论方法正常完成还是异常完成都属于方法结束。</font>
 
+##### 除了==StackOverFlowError==错误之外，栈还可能会出现==OutOfMemoryError==错误，这是因为如果栈的内存大小可以动态扩展，如果虚拟机在动态扩展栈时无法申请到足够的内存空间，则抛出==OutOfMemoryError==错误
+
+##### 程序运行中栈可能会出现的两种错误：
+
+- ##### StackOverFlowError：若栈的内存大小<font color='red'>不允许</font>动态扩展，那么当线程请求栈的深度超过当前Java虚拟机栈的最大深度的时候，就抛出StackOverFlowError的错误
+
+- ##### OutOfMemoryError：如果栈的内存大小<font color='red'>允许</font>动态扩展，如果虚拟机在动态扩展栈时无法申请到足够的空间，则抛出OutOfMemoryError错误。![img](https://javaguide.cn/assets/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B%E7%AC%AC%E4%B8%89%E7%89%88%E7%9A%84%E7%AC%AC2%E7%AB%A0-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88.f4f863a2.png)
+
+
+
+#### 本地方法栈
+
+##### 和虚拟机栈所发挥的作用非常相似，区别是：虚拟机栈为虚拟机执行Java方法（也就是字节码）服务，而本地方法栈则为虚拟机使用到的Native方法服务。在HotSpot虚拟机种和Java虚拟机栈合二为一。
+
+##### 本地方法被执行的时候，在本地方法栈也会创建一个栈帧，用于存放该本地方法的局部变量表、操作数栈、动态链接、出口信息。
+
+##### 方法执行完毕后相应的栈帧也会出栈并释放内存空间，也会出现StackOverFlowError和OutOfMemoryError错误
+
 
 
 
