@@ -8,20 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "be7ffb9eddd8a680",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
             "id": "af2140a6415e0281",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "日常零食 tag 的来源.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "af784c33d8d58fa6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mac OS Idae编译速度慢的解决方案.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "日常零食 tag 的来源.md",
+                "file": "Mac OS Idae编译速度慢的解决方案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "日常零食 tag 的来源.md",
+                "file": "Mac OS Idae编译速度慢的解决方案.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "日常零食 tag 的来源.md"
+                "file": "Mac OS Idae编译速度慢的解决方案.md"
               }
             }
           }
@@ -147,16 +151,17 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "af2140a6415e0281",
+  "active": "af784c33d8d58fa6",
   "lastOpenFiles": [
-    "日常零食 tag 的来源.md"
+    "日常零食 tag 的来源.md",
+    "Mac OS Idae编译速度慢的解决方案.md"
   ]
 }
